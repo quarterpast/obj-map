@@ -20,5 +20,15 @@
   "bugs": {
     "url": "https://github.com/quarterto/obj-map/issues"
   },
-  "homepage": "https://github.com/quarterto/obj-map"
+  "homepage": "https://github.com/quarterto/obj-map",
+  "dependencies": {
+    "async-early-error": "^1.2.0",
+    "curry": "^1.2.0"
+  },
+  "devDependencies": {
+    "expect.js": "^0.3.1",
+    "mocha": "^1.21.4",
+    "sinon": "^1.10.3",
+    "sinon-expect": "^0.2.0"
+  }
 }
