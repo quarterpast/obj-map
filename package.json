@@ -22,8 +22,7 @@
   },
   "homepage": "https://github.com/quarterto/obj-map",
   "dependencies": {
-    "async-early-error": "^1.2.0",
-    "curry": "^1.2.0"
+    "async-early-error": "^1.2.0"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
