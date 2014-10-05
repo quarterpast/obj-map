@@ -5,7 +5,7 @@ var objMap = require('./');
 
 describe('objMap', function() {
 	it('should call iterator with each key', function() {
-		var iter = sinon.spy();
+		var iter = sinon.stub();
 		objMap({a:1, b:2, c:3}, iter);
 		expect(iter).was.calledThrice();
 		expect(iter).was.calledWith('a');
@@ -38,7 +38,7 @@ describe('objMap', function() {
 
 describe('objMap.async', function() {
 	it('should call iterator with each key', function(done) {
-		var iter = sinon.spy();
+		var iter = sinon.stub().yields();
 		objMap.async({a:1, b:2, c:3}, iter, function(e) {
 			expect(iter).was.calledThrice();
 			expect(iter).was.calledWith('a');
@@ -48,7 +48,7 @@ describe('objMap.async', function() {
 		});
 	});
 	it('should call iterator with each key and value', function(done) {
-		var iter = sinon.spy();
+		var iter = sinon.stub().yields();
 		objMap.async({a:1, b:2, c:3}, iter, function(e) {
 			expect(iter).was.calledThrice();
 			expect(iter).was.calledWith('a', 1);
@@ -58,8 +58,8 @@ describe('objMap.async', function() {
 		});
 	});
 	it('should call back new object with values transformed by iterator', function(done) {
-		objMap.async({a:1, b:2, c:3}, function(k, v) {
-			return v * 2;
+		objMap.async({a:1, b:2, c:3}, function(k, v, cb) {
+			cb(null, v * 2);
 		}, function(e, ys) {
 			expect(ys).to.eql({a:2, b:4, c:6});
 			done(e);
