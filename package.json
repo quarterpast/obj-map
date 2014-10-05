@@ -1,0 +1,24 @@
+{
+  "name": "obj-map",
+  "version": "1.0.0",
+  "description": "map objects",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/quarterto/obj-map.git"
+  },
+  "keywords": [
+    "object",
+    "map",
+    "async"
+  ],
+  "author": "Matt Brennan <mwrbrennan@gmail.com> (http://blog.153.io/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/quarterto/obj-map/issues"
+  },
+  "homepage": "https://github.com/quarterto/obj-map"
+}
